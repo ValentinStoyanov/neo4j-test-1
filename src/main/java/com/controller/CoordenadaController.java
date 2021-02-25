@@ -2,7 +2,10 @@ package com.controller;
 
 import java.util.List;
 
+import org.neo4j.driver.Driver;
+import org.neo4j.driver.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +22,22 @@ public class CoordenadaController {
 	@Autowired
 	private CoordenadaRepository coordenadaRepository;
 	
+	private final Driver driver ; 
 
+	public CoordenadaController(Driver driver) { 
+		this.driver = driver;
+	}
+
+	@PostMapping(path = "relationCoordenadaDestino", produces = MediaType.APPLICATION_JSON_VALUE) 
+	public String crearRelacionCamion() {
+
+		try (Session session = driver.session()) { 
+			return  session.run("MATCH (a:Coordenada), (b:OrigenDestino)\r\n"
+					+ "WHERE a.latitud =  b.idCoordenadas \r\n"
+					+ "CREATE (b)-[r:SE_ENCUENTRA_EN]->(a)\r\n"
+					+ "RETURN type(r)").toString();
+		}
+	}
 	
 	
 	@GetMapping(value="getAll")

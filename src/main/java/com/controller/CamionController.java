@@ -21,20 +21,7 @@ public class CamionController {
 	@Autowired
 	private CamionRepository camionRepository;
 	
-	private final Driver driver ; 
 
-	public CamionController(Driver driver) { 
-		this.driver = driver;
-	}
-
-	@GetMapping(path = "/camiones", produces = MediaType.APPLICATION_JSON_VALUE) 
-	public List<String> getMovieTitles() {
-
-		try (Session session = driver.session()) { 
-			return session.run("MATCH (m:Camion) RETURN m ORDER BY m.name ASC")
-				.list(r -> r.get("m").asNode().get("matricula").asString());
-		}
-	}
 	
 	
 	@GetMapping(value="getAll")

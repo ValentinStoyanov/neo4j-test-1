@@ -20,6 +20,26 @@
 <button onclick="i_remolque()">Remolque</button>
 <button onclick="i_viaje()">Viaje</button> <br />
 
+<p>Insertar todas las relaciones</p>
+
+<button onclick="r_all()">Iniciar</button> <br />
+
+<p>Insertar relaciones por separado</p>
+
+<button onclick="r_cargaorigen()">CargaOrigen</button>
+<button onclick="r_cargadestino()">CargaDestino</button>
+<button onclick="r_coordenadadestino()">CoordenadaDestino</button>
+<button onclick="r_propietariodestino()">PropietarioDestino</button>
+<button onclick="r_remolquecarga()">RemolqueCarga</button>
+<button onclick="r_viajecamion()">ViajeCamion</button>
+<button onclick="r_viajeconductor()">ViajeConductor</button>
+<button onclick="r_viajeremolque()">ViajeRemolque</button>
+
+
+
+
+
+
 <p>Borrar todo</p>
 
 <button onclick="borrado()">Borrar todo</button>
@@ -42,9 +62,126 @@
 <script>
 
 
-function i_all(){
+
+function r_all(){
 	
-	var ajaxTime= new Date().getTime();
+	r_cargaorigen()
+	r_cargadestino()
+	r_coordenadadestino()
+	r_propietariodestino()
+	r_remolquecarga()
+	r_viajecamion()
+	r_viajeconductor()
+	r_viajeremolque()
+	
+}
+
+function r_viajeremolque(){
+	var settings = {
+			  "url": "http://localhost:8080/viaje/relationRemolque",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_viajeconductor(){
+	var settings = {
+			  "url": "http://localhost:8080/viaje/relationConductor",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+function r_viajecamion(){
+	var settings = {
+			  "url": "http://localhost:8080/viaje/relationCamion",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+
+function r_remolquecarga(){
+	var settings = {
+			  "url": "http://localhost:8080/remolque/relationRemolqueCarga",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+
+function r_propietariodestino(){
+	var settings = {
+			  "url": "http://localhost:8080/propietario/relationPropietarioDestino",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_coordenadadestino(){
+	var settings = {
+			  "url": "http://localhost:8080/coordenada/relationCoordenadaDestino",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_cargaorigen(){
+	var settings = {
+			  "url": "http://localhost:8080/carga/relationCargaOrigen",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_cargadestino(){
+	var settings = {
+			  "url": "http://localhost:8080/carga/relationCargaDestino",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function i_all(){
 	
 	i_camion()
 	i_carga()
@@ -55,14 +192,12 @@ function i_all(){
 	i_remolque()
 	i_viaje()
 	
-	var totalTime = new Date().getTime()-ajaxTime;
-	
-	console.log(totalTime)
 }
 
 
 function i_camion() {
 	   
+	var ajaxTime= new Date().getTime();
 	
 	fetch("camion.json")
 	.then(response => response.json())
@@ -80,7 +215,9 @@ function i_camion() {
 			};
 
 			$.ajax(settings).done(function (response) {
-			  console.log(response);
+				var totalTime = new Date().getTime()-ajaxTime;
+				console.log(response)
+			  console.log("Time to insert camion.json: "+totalTime);
 			});
 	    
 	});
@@ -89,7 +226,7 @@ function i_camion() {
 
 function i_carga() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("carga.json")
 	.then(response => response.json())
 	.then(result => {
@@ -106,7 +243,9 @@ function i_carga() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert carga.json: "+totalTime);
 			});
 	    
 	});
@@ -115,7 +254,7 @@ function i_carga() {
 
 function i_conductor() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("conductor.json")
 	.then(response => response.json())
 	.then(result => {
@@ -132,7 +271,9 @@ function i_conductor() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert conductor.json: "+totalTime);
 			});
 	    
 	});
@@ -142,7 +283,7 @@ function i_conductor() {
 
 function i_coordenada() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("coordenada.json")
 	.then(response => response.json())
 	.then(result => {
@@ -159,7 +300,9 @@ function i_coordenada() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert coordenada.json: "+totalTime);
 			});
 	    
 	});
@@ -169,7 +312,7 @@ function i_coordenada() {
 
 function i_origendestino() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("origendestino.json")
 	.then(response => response.json())
 	.then(result => {
@@ -186,7 +329,9 @@ function i_origendestino() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert origendestino.json: "+totalTime);
 			});
 	    
 	});
@@ -195,7 +340,7 @@ function i_origendestino() {
 
 
 function i_propietario() {
-	
+	var ajaxTime= new Date().getTime();
 	fetch("propietario.json")
 	.then(response => response.json())
 	.then(result => {
@@ -212,7 +357,9 @@ function i_propietario() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert propietario.json: "+totalTime);
 			});
 	    
 	});
@@ -222,7 +369,7 @@ function i_propietario() {
 
 function i_remolque() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("remolque.json")
 	.then(response => response.json())
 	.then(result => {
@@ -239,7 +386,9 @@ function i_remolque() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert remolque.json: "+totalTime);
 			});
 	    
 	});
@@ -249,7 +398,7 @@ function i_remolque() {
 
 function i_viaje() {
 	   
-	
+	var ajaxTime= new Date().getTime();
 	fetch("viaje.json")
 	.then(response => response.json())
 	.then(result => {
@@ -266,7 +415,9 @@ function i_viaje() {
 			};
 
 			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
 			  console.log(response);
+			  console.log("Time to insert viaje.json: "+totalTime);
 			});
 	    
 	});

@@ -23,6 +23,7 @@ public class OrigenDestinoController {
 
 	
 	
+	
 	@GetMapping(value="getAll")
     public List<OrigenDestino> getAll(){
         

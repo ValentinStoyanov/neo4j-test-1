@@ -2,7 +2,10 @@ package com.controller;
 
 import java.util.List;
 
+import org.neo4j.driver.Driver;
+import org.neo4j.driver.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +25,24 @@ public class RemolqueController {
 	private RemolqueRepository remolqueRepository;
 	
 
+	private final Driver driver ; 
+
+	public RemolqueController(Driver driver) { 
+		this.driver = driver;
+	}
+
+	@PostMapping(path = "relationRemolqueCarga", produces = MediaType.APPLICATION_JSON_VALUE) 
+	public String crearRelacionCamion() {
+
+		try (Session session = driver.session()) { 
+			return  session.run("MATCH (a:Remolque), (b:Carga)\r\n"
+					+ "WHERE a.idCarga =  b.codigo \r\n"
+					+ "CREATE (a)-[r:CARGA]->(b)\r\n"
+					+ "RETURN type(r)").toString();
+		}
+	}
+	
+	
 	
 	
 	@GetMapping(value="getAll")
