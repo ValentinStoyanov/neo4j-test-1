@@ -21,8 +21,8 @@ public class Camion {
 	}
 
 	
-	public Camion(Long id, String numeroBastidor, String matricula, String marca, String modelo, String tipo) {
-		this.id = id;
+	public Camion( String numeroBastidor, String matricula, String marca, String modelo, String tipo) {
+	
 		this.numeroBastidor = numeroBastidor;
 		this.matricula = matricula;
 		this.marca = marca;
@@ -30,15 +30,6 @@ public class Camion {
 		this.tipo = tipo;
 	}
 
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 
 	public String getNumeroBastidor() {
