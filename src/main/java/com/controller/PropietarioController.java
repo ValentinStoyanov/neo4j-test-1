@@ -35,7 +35,7 @@ public class PropietarioController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Propietario), (b:OrigenDestino)\r\n"
-					+ "WHERE a.dni =  b.idPropietario \r\n"
+					+ "WHERE a.dni =  b.id_propietario \r\n"
 					+ "CREATE (a)-[r:PERTENECE_A]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}

@@ -7,33 +7,42 @@ import org.springframework.data.neo4j.core.schema.Node;
 @Node
 public class OrigenDestino {
 	
+
 	@Id @GeneratedValue private Long id;
-	private String idPropietario;
+	private String id_propietario;
 	private String direccion;
 	private String ciudad;
 	private String provincia;
-	private String idCoordenadas;
+	private String id_coordenadas;
 	
-	public OrigenDestino(String idPropietario, String direccion, String ciudad, String provincia,
-			String idCoordenadas) {
-		
-		this.idPropietario = idPropietario;
+	public OrigenDestino( String id_propietario, String direccion, String ciudad, String provincia,
+			String id_coordenadas) {
+		super();
+		this.id_propietario = id_propietario;
 		this.direccion = direccion;
 		this.ciudad = ciudad;
 		this.provincia = provincia;
-		this.idCoordenadas = idCoordenadas;
+		this.id_coordenadas = id_coordenadas;
 	}
 	
 	public OrigenDestino() {
 		
 	}
 
-	public String getIdPropietario() {
-		return idPropietario;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdPropietario(String idPropietario) {
-		this.idPropietario = idPropietario;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getId_propietario() {
+		return id_propietario;
+	}
+
+	public void setId_propietario(String id_propietario) {
+		this.id_propietario = id_propietario;
 	}
 
 	public String getDireccion() {
@@ -60,11 +69,16 @@ public class OrigenDestino {
 		this.provincia = provincia;
 	}
 
-	public String getIdCoordenadas() {
-		return idCoordenadas;
+	public String getId_coordenadas() {
+		return id_coordenadas;
 	}
 
-	public void setIdCoordenadas(String idCoordenadas) {
-		this.idCoordenadas = idCoordenadas;
+	public void setId_coordenadas(String id_coordenadas) {
+		this.id_coordenadas = id_coordenadas;
 	}
+	
+	
+	
+	
+	
 }

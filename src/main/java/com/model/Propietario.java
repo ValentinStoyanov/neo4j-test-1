@@ -7,20 +7,26 @@ import org.springframework.data.neo4j.core.schema.Node;
 @Node
 public class Propietario {
 
+
+
+
+
 	@Id @GeneratedValue private Long id;
 	private String dni;
-	private String nombreFiscal;
-	private String nombreComercial;
-	private String nombrePropietario;
+	private String nombre_fiscal;
+	private String nombre_comercial;
+	private String nombre_propietario;
 	private String telefono;
 	
-	public Propietario(String dni, String nombreFiscal, String nombreComercial, String nombrePropietario,
+
+	
+	public Propietario( String dni, String nombre_fiscal, String nombre_comercial, String nombre_propietario,
 			String telefono) {
-		
+		super();
 		this.dni = dni;
-		this.nombreFiscal = nombreFiscal;
-		this.nombreComercial = nombreComercial;
-		this.nombrePropietario = nombrePropietario;
+		this.nombre_fiscal = nombre_fiscal;
+		this.nombre_comercial = nombre_comercial;
+		this.nombre_propietario = nombre_propietario;
 		this.telefono = telefono;
 	}
 	
@@ -28,44 +34,77 @@ public class Propietario {
 		
 	}
 
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
 	public String getDni() {
 		return dni;
 	}
+
+
 
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
-	public String getNombreFiscal() {
-		return nombreFiscal;
+
+
+	public String getNombre_fiscal() {
+		return nombre_fiscal;
 	}
 
-	public void setNombreFiscal(String nombreFiscal) {
-		this.nombreFiscal = nombreFiscal;
+
+
+	public void setNombre_fiscal(String nombre_fiscal) {
+		this.nombre_fiscal = nombre_fiscal;
 	}
 
-	public String getNombreComercial() {
-		return nombreComercial;
+
+
+	public String getNombre_comercial() {
+		return nombre_comercial;
 	}
 
-	public void setNombreComercial(String nombreComercial) {
-		this.nombreComercial = nombreComercial;
+
+
+	public void setNombre_comercial(String nombre_comercial) {
+		this.nombre_comercial = nombre_comercial;
 	}
 
-	public String getNombrePropietario() {
-		return nombrePropietario;
+
+
+	public String getNombre_propietario() {
+		return nombre_propietario;
 	}
 
-	public void setNombrePropietario(String nombrePropietario) {
-		this.nombrePropietario = nombrePropietario;
+
+
+	public void setNombre_propietario(String nombre_propietario) {
+		this.nombre_propietario = nombre_propietario;
 	}
+
+
 
 	public String getTelefono() {
 		return telefono;
 	}
 
+
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
 	
 }

@@ -9,7 +9,7 @@ public class Camion {
 	
 
 	@Id @GeneratedValue private Long id;
-	private String numeroBastidor;
+	private String numero_bastidor;
 	private String matricula;
 	private String marca;
 	private String modelo;
@@ -21,9 +21,9 @@ public class Camion {
 	}
 
 	
-	public Camion( String numeroBastidor, String matricula, String marca, String modelo, String tipo) {
+	public Camion( String numero_bastidor, String matricula, String marca, String modelo, String tipo) {
 	
-		this.numeroBastidor = numeroBastidor;
+		this.numero_bastidor = numero_bastidor;
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -32,14 +32,6 @@ public class Camion {
 
 
 
-	public String getNumeroBastidor() {
-		return numeroBastidor;
-	}
-
-
-	public void setNumeroBastidor(String numeroBastidor) {
-		this.numeroBastidor = numeroBastidor;
-	}
 
 
 	public String getMatricula() {
@@ -79,6 +71,26 @@ public class Camion {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getNumero_bastidor() {
+		return numero_bastidor;
+	}
+
+
+	public void setNumero_bastidor(String numero_bastidor) {
+		this.numero_bastidor = numero_bastidor;
 	}
 	
 	

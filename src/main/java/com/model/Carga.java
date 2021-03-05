@@ -11,17 +11,17 @@ public class Carga {
 	private String codigo;
 	private String tipo;
 	private String peso;
-	private String idOrigen;
-	private String idDestino;
+	private String id_origen;
+	private String id_destino;
 	
 	
-	public Carga(String codigo, String tipo, String peso, String idOrigen, String idDestino) {
+	public Carga(String codigo, String tipo, String peso, String id_origen, String id_destino) {
 		
 		this.codigo = codigo;
 		this.tipo = tipo;
 		this.peso = peso;
-		this.idOrigen = idOrigen;
-		this.idDestino = idDestino;
+		this.id_origen = id_origen;
+		this.id_destino = id_destino;
 	}
 	
 	public Carga() {
@@ -52,20 +52,30 @@ public class Carga {
 		this.peso = peso;
 	}
 
-	public String getIdOrigen() {
-		return idOrigen;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdOrigen(String idOrigen) {
-		this.idOrigen = idOrigen;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getIdDestino() {
-		return idDestino;
+	public String getId_origen() {
+		return id_origen;
 	}
 
-	public void setIdDestino(String idDestino) {
-		this.idDestino = idDestino;
+	public void setId_origen(String id_origen) {
+		this.id_origen = id_origen;
 	}
+
+	public String getId_destino() {
+		return id_destino;
+	}
+
+	public void setId_destino(String id_destino) {
+		this.id_destino = id_destino;
+	}
+
+
 	
 }

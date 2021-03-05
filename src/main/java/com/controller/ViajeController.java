@@ -35,7 +35,7 @@ public class ViajeController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Camion), (b:Viaje)\r\n"
-					+ "WHERE a.matricula =  b.idCamion \r\n"
+					+ "WHERE a.matricula =  b.id_camion \r\n"
 					+ "CREATE (a)-[r:CAMION_EN]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}
@@ -46,7 +46,7 @@ public class ViajeController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Conductor), (b:Viaje)\r\n"
-					+ "WHERE a.dni =  b.idConductor \r\n"
+					+ "WHERE a.dni =  b.id_conductor \r\n"
 					+ "CREATE (a)-[r:CONDUCE_EN]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}
@@ -58,7 +58,7 @@ public class ViajeController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Remolque), (b:Viaje)\r\n"
-					+ "WHERE a.matricula =  b.idRemolque \r\n"
+					+ "WHERE a.matricula =  b.id_remolque \r\n"
 					+ "CREATE (a)-[r:CARGA_EN]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}

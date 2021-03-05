@@ -11,13 +11,13 @@ public class Conductor {
 	private String dni;
 	private String nombre;
 	private String apellidos;
-	private String permisosConducir;
+	private String permisos_conducir;
 	
-	public Conductor(String dni, String nombre, String apellidos, String permisosConducir) {
+	public Conductor(String dni, String nombre, String apellidos, String permisos_conducir) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.permisosConducir = permisosConducir;
+		this.permisos_conducir = permisos_conducir;
 	}
 	
 	public Conductor() {
@@ -48,11 +48,21 @@ public class Conductor {
 		this.apellidos = apellidos;
 	}
 
-	public String getPermisoConducir() {
-		return permisosConducir;
+	public Long getId() {
+		return id;
 	}
 
-	public void setPermisoConducir(String permisoConducir) {
-		this.permisosConducir = permisoConducir;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+	public String getPermisos_conducir() {
+		return permisos_conducir;
+	}
+
+	public void setPermisos_conducir(String permisos_conducir) {
+		this.permisos_conducir = permisos_conducir;
+	}
+
+
 }
