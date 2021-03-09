@@ -33,7 +33,7 @@ public class CoordenadaController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Coordenada), (b:OrigenDestino)\r\n"
-					+ "WHERE a.latitud =  b.id_coordenadas \r\n"
+					+ "WHERE a.latitud =  b.idcoordenadas \r\n"
 					+ "CREATE (b)-[r:SE_ENCUENTRA_EN]->(a)\r\n"
 					+ "RETURN type(r)").toString();
 		}

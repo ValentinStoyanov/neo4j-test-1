@@ -36,7 +36,7 @@ public class RemolqueController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Remolque), (b:Carga)\r\n"
-					+ "WHERE a.id_carga =  b.codigo \r\n"
+					+ "WHERE a.idcarga =  b.codigo \r\n"
 					+ "CREATE (a)-[r:CARGA]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}

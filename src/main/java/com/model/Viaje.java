@@ -10,17 +10,27 @@ public class Viaje {
 
 
 
-	@Id @GeneratedValue private Long id;
-	private String id_conductor;
-	private String id_camion;
-	private String id_remolque;
-
-	public Viaje(String id_conductor, String id_camion, String id_remolque) {
+	public Viaje(Long id, String idconductor, String idcamion, String idremolque) {
 		super();
-		this.id_conductor = id_conductor;
-		this.id_camion = id_camion;
-		this.id_remolque = id_remolque;
+		this.id = id;
+		this.idconductor = idconductor;
+		this.idcamion = idcamion;
+		this.idremolque = idremolque;
 	}
+
+
+
+
+
+
+
+
+
+	@Id @GeneratedValue private Long id;
+	private String idconductor;
+	private String idcamion;
+	private String idremolque;
+
 
 	
 	
@@ -30,9 +40,53 @@ public class Viaje {
 
 
 
+
+	public String getIdconductor() {
+		return idconductor;
+	}
+
+
+
+
+	public void setIdconductor(String idconductor) {
+		this.idconductor = idconductor;
+	}
+
+
+
+
+	public String getIdcamion() {
+		return idcamion;
+	}
+
+
+
+
+	public void setIdcamion(String idcamion) {
+		this.idcamion = idcamion;
+	}
+
+
+
+
+	public String getIdremolque() {
+		return idremolque;
+	}
+
+
+
+
+	public void setIdremolque(String idremolque) {
+		this.idremolque = idremolque;
+	}
+
+
+
+
 	public Long getId() {
 		return id;
 	}
+
 
 
 
@@ -42,39 +96,6 @@ public class Viaje {
 
 
 
-	public String getId_conductor() {
-		return id_conductor;
-	}
-
-
-
-	public void setId_conductor(String id_conductor) {
-		this.id_conductor = id_conductor;
-	}
-
-
-
-	public String getId_camion() {
-		return id_camion;
-	}
-
-
-
-	public void setId_camion(String id_camion) {
-		this.id_camion = id_camion;
-	}
-
-
-
-	public String getId_remolque() {
-		return id_remolque;
-	}
-
-
-
-	public void setId_remolque(String id_remolque) {
-		this.id_remolque = id_remolque;
-	}
 	
 
 	

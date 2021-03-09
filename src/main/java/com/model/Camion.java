@@ -8,8 +8,19 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class Camion {
 	
 
+	public Camion(Long id, String numerobastidor, String matricula, String marca, String modelo, String tipo) {
+		super();
+		this.id = id;
+		this.numerobastidor = numerobastidor;
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.tipo = tipo;
+	}
+
+
 	@Id @GeneratedValue private Long id;
-	private String numero_bastidor;
+	private String numerobastidor;
 	private String matricula;
 	private String marca;
 	private String modelo;
@@ -20,18 +31,25 @@ public class Camion {
 		
 	}
 
-	
-	public Camion( String numero_bastidor, String matricula, String marca, String modelo, String tipo) {
-	
-		this.numero_bastidor = numero_bastidor;
-		this.matricula = matricula;
-		this.marca = marca;
-		this.modelo = modelo;
-		this.tipo = tipo;
+
+	public Long getId() {
+		return id;
 	}
 
 
+	public void setId(Long id) {
+		this.id = id;
+	}
 
+
+	public String getNumerobastidor() {
+		return numerobastidor;
+	}
+
+
+	public void setNumerobastidor(String numerobastidor) {
+		this.numerobastidor = numerobastidor;
+	}
 
 
 	public String getMatricula() {
@@ -73,26 +91,11 @@ public class Camion {
 		this.tipo = tipo;
 	}
 
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public String getNumero_bastidor() {
-		return numero_bastidor;
-	}
-
-
-	public void setNumero_bastidor(String numero_bastidor) {
-		this.numero_bastidor = numero_bastidor;
-	}
 	
+
+
+
+
 	
 	
 

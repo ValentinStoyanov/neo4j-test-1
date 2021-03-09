@@ -8,77 +8,104 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class OrigenDestino {
 	
 
-	@Id @GeneratedValue private Long id;
-	private String id_propietario;
-	private String direccion;
-	private String ciudad;
-	private String provincia;
-	private String id_coordenadas;
-	
-	public OrigenDestino( String id_propietario, String direccion, String ciudad, String provincia,
-			String id_coordenadas) {
+	public OrigenDestino(Long id, String idpropietario, String direccion, String ciudad, String provincia,
+			String idcoordenadas) {
 		super();
-		this.id_propietario = id_propietario;
+		this.id = id;
+		this.idpropietario = idpropietario;
 		this.direccion = direccion;
 		this.ciudad = ciudad;
 		this.provincia = provincia;
-		this.id_coordenadas = id_coordenadas;
+		this.idcoordenadas = idcoordenadas;
 	}
+
+
+
+	@Id @GeneratedValue private Long id;
+	private String idpropietario;
+	private String direccion;
+	private String ciudad;
+	private String provincia;
+	private String idcoordenadas;
+	
+	
 	
 	public OrigenDestino() {
 		
 	}
 
+
+
 	public Long getId() {
 		return id;
 	}
+
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getId_propietario() {
-		return id_propietario;
+
+
+	public String getIdpropietario() {
+		return idpropietario;
 	}
 
-	public void setId_propietario(String id_propietario) {
-		this.id_propietario = id_propietario;
+
+
+	public void setIdpropietario(String idpropietario) {
+		this.idpropietario = idpropietario;
 	}
+
+
 
 	public String getDireccion() {
 		return direccion;
 	}
 
+
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+
 
 	public String getCiudad() {
 		return ciudad;
 	}
 
+
+
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
+
+
 
 	public String getProvincia() {
 		return provincia;
 	}
 
+
+
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
 
-	public String getId_coordenadas() {
-		return id_coordenadas;
+
+
+	public String getIdcoordenadas() {
+		return idcoordenadas;
 	}
 
-	public void setId_coordenadas(String id_coordenadas) {
-		this.id_coordenadas = id_coordenadas;
+
+
+	public void setIdcoordenadas(String idcoordenadas) {
+		this.idcoordenadas = idcoordenadas;
 	}
-	
-	
-	
+
 	
 	
 }

@@ -32,7 +32,7 @@ public class CargaController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Carga), (b:OrigenDestino)\r\n"
-					+ "WHERE a.id_origen =  b.direccion \r\n"
+					+ "WHERE a.idorigen =  b.direccion \r\n"
 					+ "CREATE (a)-[r:PARTE_DE]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}
@@ -44,7 +44,7 @@ public class CargaController {
 
 		try (Session session = driver.session()) { 
 			return  session.run("MATCH (a:Carga), (b:OrigenDestino)\r\n"
-					+ "WHERE a.id_destino =  b.direccion \r\n"
+					+ "WHERE a.iddestino =  b.direccion \r\n"
 					+ "CREATE (a)-[r:SE_DIRIJE_A]->(b)\r\n"
 					+ "RETURN type(r)").toString();
 		}

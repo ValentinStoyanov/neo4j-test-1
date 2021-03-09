@@ -6,35 +6,37 @@ import org.springframework.data.neo4j.core.schema.Node;
 
 @Node
 public class Remolque {
-
+	
+	public Remolque(Long id, String numerobastidor, String matricula, String marca, String modelo, String tipo,
+			int idcarga) {
+		super();
+		this.id = id;
+		this.numerobastidor = numerobastidor;
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.tipo = tipo;
+		this.idcarga = idcarga;
+	}
 
 
 
 
 	@Id @GeneratedValue private Long id;
-	private String numero_bastidor;
+	private String numerobastidor;
 	private String matricula;
 	private String marca;
 	private String modelo;
 	private String tipo;
-	private String id_carga;
+	private int idcarga;
 	
 	
-	public Remolque(String numero_bastidor, String matricula, String marca, String modelo, String tipo,
-			String id_carga) {
-		super();
-		this.numero_bastidor = numero_bastidor;
-		this.matricula = matricula;
-		this.marca = marca;
-		this.modelo = modelo;
-		this.tipo = tipo;
-		this.id_carga = id_carga;
-	}
-	
+
 	
 	public Remolque() {
 		
 	}
+
 
 
 
@@ -44,21 +46,25 @@ public class Remolque {
 
 
 
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
 
 
-	public String getNumero_bastidor() {
-		return numero_bastidor;
+
+	public String getNumerobastidor() {
+		return numerobastidor;
 	}
 
 
 
-	public void setNumero_bastidor(String numero_bastidor) {
-		this.numero_bastidor = numero_bastidor;
+
+	public void setNumerobastidor(String numerobastidor) {
+		this.numerobastidor = numerobastidor;
 	}
+
 
 
 
@@ -68,9 +74,11 @@ public class Remolque {
 
 
 
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+
 
 
 
@@ -80,9 +88,11 @@ public class Remolque {
 
 
 
+
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
 
 
 
@@ -92,9 +102,11 @@ public class Remolque {
 
 
 
+
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+
 
 
 
@@ -104,21 +116,27 @@ public class Remolque {
 
 
 
+
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 
 
 
-	public String getId_carga() {
-		return id_carga;
+
+	public int getIdcarga() {
+		return idcarga;
 	}
 
 
 
-	public void setId_carga(String id_carga) {
-		this.id_carga = id_carga;
+
+	public void setIdcarga(int idcarga) {
+		this.idcarga = idcarga;
 	}
 
+
+
+	
 	
 }
