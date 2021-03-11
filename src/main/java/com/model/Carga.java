@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 @Node
 public class Carga {
 
-	public Carga(Long id, int codigo, String tipo, String peso, String idorigen, String iddestino) {
+	public Carga(Long id, int codigo, String tipo, int peso, String idorigen, String iddestino) {
 		super();
 		this.id = id;
 		this.codigo = codigo;
@@ -23,7 +23,7 @@ public class Carga {
 	@Id @GeneratedValue private Long id;
 	private int codigo;
 	private String tipo;
-	private String peso;
+	private int peso;
 	private String idorigen;
 	private String iddestino;
 	
@@ -79,14 +79,14 @@ public class Carga {
 
 
 
-	public String getPeso() {
+	public int getPeso() {
 		return peso;
 	}
 
 
 
 
-	public void setPeso(String peso) {
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 
