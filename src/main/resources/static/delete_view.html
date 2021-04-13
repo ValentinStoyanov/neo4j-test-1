@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a  href="index.html" >Home</a>
+  <a   href="insert_view.html">Insert</a>
+  <a  href="relations_views.html">Relations</a>
+  <a  class="active"  href="delete_view.html">Delete</a>
+
+</div>
+
+<div style="padding-left:16px">
+
+<p>Delete All Collections</p>
+
+<button onclick="deleteall()">Delete All</button>
+
+<p>Delete by collection</p>
+
+<button onclick="d_truck()">Truck</button>
+<button onclick="d_load()">Load</button>
+<button onclick="d_driver()">Driver</button>
+<button onclick="d_coordinate()">Coordinate</button>
+<button onclick="d_origindestiny()">OriginDestiny</button>
+<button onclick="d_owner()">Owner</button>
+<button onclick="d_trailer()">Trailer</button>
+<button onclick="d_travel()">Travel</button> <br />
+
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+function d_travel() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/travel/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function d_trailer() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/trailer/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function d_owner() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/owner/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function d_origindestiny() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/origindestiny/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function d_coordinate() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/coordinate/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function d_driver() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/driver/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function d_load() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/load/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function d_truck() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/truck/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function deletedall(){
+	
+	alert("borrando")
+	
+	
+	var settings = {
+		  "url": "http://localhost:8080/query/detachdelete",
+		  "method": "POST",
+		  "timeout": 0,
+		};
+
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
+	
+
+}
+
+</script>
+
+
+</html>

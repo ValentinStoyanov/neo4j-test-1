@@ -21,22 +21,22 @@ import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.model.Camion;
-import com.model.Viaje;
-import com.model.Carga;
-import com.model.Conductor;
-import com.model.Coordenada;
-import com.model.OrigenDestino;
-import com.model.Propietario;
-import com.model.Remolque;
-import com.repository.CamionRepository;
-import com.repository.CargaRepository;
-import com.repository.ConductorRepository;
-import com.repository.ViajeRepository;
-import com.repository.CoordenadaRepository;
-import com.repository.OrigenDestinoRepository;
-import com.repository.PropietarioRepository;
-import com.repository.RemolqueRepository;
+import com.model.Truck;
+import com.model.Travel;
+import com.model.Load;
+import com.model.Driver;
+import com.model.Coordinate;
+import com.model.OriginDestiny;
+import com.model.Owner;
+import com.model.Trailer;
+import com.repository.TruckRepository;
+import com.repository.LoadRepository;
+import com.repository.DriverRepository;
+import com.repository.TravelRepository;
+import com.repository.CoordinateRepository;
+import com.repository.OriginDestinyRepository;
+import com.repository.OwnerRepository;
+import com.repository.TrailerRepository;
 
 
 

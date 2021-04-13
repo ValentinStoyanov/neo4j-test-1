@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a  href="index.html" >Home</a>
+  <a   href="insert_view.html">Insert</a>
+  <a  class="active" href="relations_views.html">Relations</a>
+  <a href="delete_view.html">Delete</a>
+
+</div>
+
+<div style="padding-left:16px">
+
+
+<p>Insert all relations</p>
+
+<button onclick="r_all()">Start</button> <br />
+
+<p>Insert relations separatly</p>
+
+<button onclick="r_cargaorigen()">Load-Origin</button>
+<button onclick="r_cargadestino()">Load-Destiny</button>
+<button onclick="r_coordenadadestino()">Coordinate-Destiny</button>
+<button onclick="r_propietariodestino()">Owner-Destiny</button>
+<button onclick="r_remolquecarga()">Trailer-Load</button>
+<button onclick="r_viajecamion()">Travel-Truck</button>
+<button onclick="r_viajeconductor()">Travel-Driver</button>
+<button onclick="r_viajeremolque()">Travel-Trailer</button>
+
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+
+function r_all(){
+	
+	r_cargaorigen()
+	r_cargadestino()
+	r_coordenadadestino()
+	r_propietariodestino()
+	r_remolquecarga()
+	r_viajecamion()
+	r_viajeconductor()
+	r_viajeremolque()
+	
+}
+
+function r_viajeremolque(){
+
+	var ajaxTime= new Date().getTime();
+	
+	var settings = {
+			  "url": "http://localhost:8080/travel/relationTrailer",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+				console.log(response)
+			  console.log("Time to insert relation viajeremolque.json: "+totalTime);
+			});
+}
+
+
+function r_viajeconductor(){
+	var settings = {
+			  "url": "http://localhost:8080/travel/relationDriver",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+function r_viajecamion(){
+	var settings = {
+			  "url": "http://localhost:8080/travel/relationTruck",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+
+function r_remolquecarga(){
+	var settings = {
+			  "url": "http://localhost:8080/trailer/relationTrailerLoad",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+
+function r_propietariodestino(){
+	var settings = {
+			  "url": "http://localhost:8080/owner/relationOwnerDestiny",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_coordenadadestino(){
+	var settings = {
+			  "url": "http://localhost:8080/coordinate/relationCoordinateDestiny",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_cargaorigen(){
+	var settings = {
+			  "url": "http://localhost:8080/load/relationLoadOrigin",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+function r_cargadestino(){
+	var settings = {
+			  "url": "http://localhost:8080/load/relationLoadDestiny",
+			  "method": "POST",
+			  "timeout": 0,
+			};
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+}
+
+
+
+</script>
+
+
+</html>
